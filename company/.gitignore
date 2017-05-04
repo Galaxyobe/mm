@@ -1,0 +1,10 @@
+download
+*.pyc
+.vscode
+.svn
+.git
+.vscode
+*.pyc
+airasia/search/download/*
+airasia/fare/download/*
+airasia/log/*

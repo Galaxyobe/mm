@@ -1,0 +1,6 @@
+scrapy
+scrapy_redis
+beautifulsoup4
+redis
+configparser
+psutil
