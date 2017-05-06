@@ -14,7 +14,7 @@ from twisted.internet.error import (ConnectError, ConnectionDone,
 from twisted.web.client import ResponseFailed
 from w3lib.url import safe_url_string
 
-from company.utils.key import KeyGenerator
+from com.utils.key import KeyGenerator
 from six.moves.urllib.parse import urljoin
 
 

@@ -70,7 +70,7 @@ class AirasiaFareSpider(RedisSpider):
         参数:
             @param url: 判断的url
         返回:
-            bool: True-有效 False-无效
+            Boolean True-有效 False-无效
         """
         if url.find('Flight/PriceItinerary?') > 0:
             return True

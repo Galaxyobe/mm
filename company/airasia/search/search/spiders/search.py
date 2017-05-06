@@ -45,7 +45,7 @@ class AirasiaSearchSpider(RedisSpider):
         参数:
             @param url: 判断的url
         返回:
-            bool: True-有效 False-无效
+            Boolean True-有效 False-无效
         """
         if url.find('Flight/Select?') > 0:
             return True

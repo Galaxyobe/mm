@@ -46,3 +46,6 @@ or
 
 ### 监控运行结果 
 > ./spider.py mon --set-redis host=127.0.0.1 port=6379 db=1 password=datacenter.io -d
+
+### 运行
+> ./spider.py run -n fare -l './log' -D

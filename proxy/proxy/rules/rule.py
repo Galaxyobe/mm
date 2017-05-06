@@ -54,7 +54,7 @@ class ProxyRules(object):
                 # generator: 页面生成器 字段名称不可改变
                 'generator': 'http://www.xicidaili.com/nn/%s',
                 # max: 允许最大的页数 字段名称不可改变 0 - 不使能
-                'max': 1,
+                'max': 100,
             },
         },
     }

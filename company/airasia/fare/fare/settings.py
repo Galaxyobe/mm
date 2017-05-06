@@ -54,7 +54,7 @@ REDIS_ITEM_AS_SET = True
 # See http://scrapy.readthedocs.io/en/latest/topics/logging.html#logging-settings
 # See
 # http://scrapy.readthedocs.io/en/latest/topics/settings.html#std:setting-LOG_ENABLED
-LOG_LEVEL = 'INFO'
+LOG_LEVEL = 'DEBUG'
 # See http://scrapy.readthedocs.io/en/latest/topics/settings.html#log-file
 # LOG_FILE = 'log/%s %s.log' % (BOT_NAME, time.strftime('%Y-%m-%d %H:%M:%S'))
 # See http://scrapy.readthedocs.io/en/latest/topics/settings.html#log-stdout
@@ -118,6 +118,26 @@ REDIS_PIPELINE = 'fare.pipelines.AirasiaFareRedisPipeline'
 REDIS_KEY_LIVE_TIME = 300
 
 
+"""
+RPC Proxy Configure
+"""
+# 使能RPC Proxy
+RPCPROXY_ENABLED = False
+
+# RPC端口配置
+RPC_PARAMS = {
+    'ip': '127.0.0.1',
+    'port': 4242,
+}
+
+# 可使用代理的最底分数 默认: 100
+USABLE_SCORE = 100
+
+# 使用代理的概率 默认: 70(0-100)
+# 0-不使用代理 70-70%的链接使用代理访问
+USABLE_PROBABILITY = 30
+
+
 # Override the default request headers:
 # DEFAULT_REQUEST_HEADERS = {
 #     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -141,6 +161,7 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.cookies.CookiesMiddleware': None,
     'scrapy2.downloadermiddlewares.cookies.CookiesMiddleware': 700,
     'scrapy2.downloadermiddlewares.reschedulertimer.ReschedulerTimer': 500,
+    'scrapy2.downloadermiddlewares.rpcproxy.RPCProxyMiddleware': 400,
 }
 
 # Enable or disable extensions
